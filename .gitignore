@@ -1,3 +1,7 @@
+# Tokens
+.ghPublish.json
+# array - first key is used as token
+
 # Logs
 logs
 *.log
@@ -87,3 +91,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# Certificates
+certificates
