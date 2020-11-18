@@ -77,6 +77,8 @@ pipelines:
             - git add .
             - git commit -m "New Version - CI"
             - git push origin bin
+          caches:
+            - node
 definitions:
   caches:
     aptsources: /etc/apt/sources.list.d
