@@ -25,7 +25,7 @@ let forge = {
       config: {
         name: "AppHub",
         authors: "Aleri",
-        iconUrl: "",
+        iconUrl: "src/icon.png",
         copyright: "Copyright (c) 2020 Aleri. All Rights Reserved.",
         certificateFile: ".\\certificates\\default.pfx",
       },
