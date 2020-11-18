@@ -46,7 +46,12 @@ pipelines:
           name: Deploy to Production
           deployment: Production
           script:
-            # Build 
+            - yarn
+            # Build
             - yarn make
             # Bump versions before publishing
             - npm --no-git-tag-version version "1.0.$BITBUCKET_BUILD_NUMBER" -m "Upgrade to new version"
+            # Publish
+            - git add .
+            - git commit -m "New Version - CI"
+            - git push origin bin
