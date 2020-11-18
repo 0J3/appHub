@@ -3,7 +3,7 @@ const package = {
   json: require("./package.json"),
 };
 
-process.env.GITHUB_TOKEN = require("./.ghPublish.json")[0];
+process.env.GITHUB_TOKEN = require("./.ghPublish.json")[0] || "";
 
 let forge = {
   // plugins: [
@@ -25,9 +25,13 @@ let forge = {
       config: {
         name: "AppHub",
         authors: "Aleri",
-        iconUrl: "src/icon.png",
+        // iconUrl:
+        //   "https://raw.githubusercontent.com/0J3/appHub/master/src/icon.png",
         copyright: "Copyright (c) 2020 Aleri. All Rights Reserved.",
         certificateFile: ".\\certificates\\default.pfx",
+        remoteReleases:
+          "https://raw.githubusercontent.com/0J3/appHub/master/out/make/squirrel.windows/x64/",
+        setupIcon: "./src/icon.ico",
       },
     },
     // {
@@ -52,6 +56,7 @@ let forge = {
         packageDisplayName: "AppHub",
         packageDescription: "AppHub: A cross-platform app for downloading apps",
         devCert: ".\\certificates\\default.pfx",
+        makeVersionWinStoreCompatible: true,
       },
     },
     {
