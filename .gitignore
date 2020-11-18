@@ -90,7 +90,9 @@ typings/
 .webpack/
 
 # Electron-Forge
-out/
+out/apphub-*
+out/make/appx/x64/pre-appx
+out/make/zip
 
 # Certificates
 certificates
