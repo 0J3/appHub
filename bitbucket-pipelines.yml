@@ -54,7 +54,7 @@ pipelines:
             - sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" > /etc/apt/sources.list.d/mono-official-stable.list'
             - apt update
             # Ensure base build dependencies are available
-            - apt install dpkg fakeroot rpm mono-complete wine snapd -y -f
+            - apt install dpkg fakeroot rpm mono-runtime wine snapd -y -f
             # Install Node Deps
             - yarn
             # Build
