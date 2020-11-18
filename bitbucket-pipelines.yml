@@ -28,13 +28,18 @@ pipelines:
               - node
   branches:
     master:
+      - step:
+          name: Build Dependencies
+          caches:
+            - node
+          script:
+            - yarn
       - parallel:
           - step:
-              name: Build and Test
+              name: Test
               caches:
                 - node
               script:
-                - yarn
                 - yarn test
           - step:
               name: Security Scan
@@ -62,7 +67,7 @@ pipelines:
           caches:
             - aptsources
             - varlib
-            - lsbin
+            # - lsbin
             - lbin
             - sbin
             - bin
@@ -70,8 +75,6 @@ pipelines:
           name: Deploy to Production
           deployment: Production
           script:
-            # Install Node Deps
-            - yarn
             # Build
             - yarn make
             # Bump versions before publishing
@@ -84,7 +87,7 @@ pipelines:
             - node
             - aptsources
             - varlib
-            - lsbin
+            # - lsbin
             - lbin
             - sbin
             - bin
