@@ -46,6 +46,8 @@ pipelines:
           name: Deploy to Production
           deployment: Production
           script:
+            # Update apt repos (just incase)
+            - apt update
             # Ensure base dependencies are available
             - apt install dpkg fakeroot
             # Install Node Deps
