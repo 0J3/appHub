@@ -46,6 +46,9 @@ pipelines:
           name: Deploy to Production
           deployment: Production
           script:
+            # Ensure base dependencies are available
+            - apt install dpkg fakeroot
+            # Install Node Deps
             - yarn
             # Build
             - yarn make
