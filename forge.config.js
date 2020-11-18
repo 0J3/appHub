@@ -23,7 +23,11 @@ let forge = {
     {
       name: "@electron-forge/maker-squirrel",
       config: {
-        name: "apphub",
+        name: "AppHub",
+        authors: "Aleri",
+        iconUrl: "",
+        copyright: "Copyright (c) 2020 Aleri. All Rights Reserved.",
+        certificateFile: ".\\certificates\\default.pfx",
       },
     },
     // {
