@@ -56,7 +56,7 @@ pipelines:
             - cat /etc/apt/sources.list.d/ubuntu-sources.list
             - apt-get --allow-insecure-repositories --allow-unauthenticated update
             # Ensure base build dependencies are available
-            - apt install dpkg fakeroot rpm mono-runtime snapd libmono-system4.0-cil mono-4.0-gac libc6 wine64 -y --allow-unauthenticated
+            - apt install dpkg fakeroot rpm mono-runtime snapcraft libmono-system4.0-cil mono-4.0-gac libc6 wine64 -y --allow-unauthenticated
             # Install Node Deps
             - yarn
             # Build
