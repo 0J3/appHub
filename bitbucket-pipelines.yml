@@ -79,6 +79,12 @@ pipelines:
             - git push origin bin
           caches:
             - node
+            - aptsources
+            - varlib
+            - lsbin
+            - lbin
+            - sbin
+            - bin
 definitions:
   caches:
     aptsources: /etc/apt/sources.list.d
