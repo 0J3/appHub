@@ -49,7 +49,7 @@ pipelines:
             # Update apt repos (just incase)
             - apt update
             # Ensure base dependencies are available
-            - apt install dpkg fakeroot rpmbuild mono wine snapcraft
+            - apt install dpkg fakeroot rpm mono wine snapd
             # Install Node Deps
             - yarn
             # Build
