@@ -1,9 +1,121 @@
-@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"; /* Import Materialize */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 100;
+}
 
+*:not(.titlebar):not(.titlebar *) {
+  -webkit-app-region: none;
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.titlebar {
+  -webkit-app-region: drag;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 30px;
+  height: 5vh;
+  min-height: 20px;
+  background: #2a2b2c;
+  z-index: 995;
+}
+
+.titlebar > button {
+  -webkit-app-region: none;
+
+  background: #ffffff00;
+  color: #ffffff;
+  border: none;
+  float: right;
+  height: 100%;
+  position: relative;
+
+  /* same vars as for height on titlebar, just for width */
+  max-width: 30px;
+  width: 5vh;
+  min-width: 20px;
+
+  z-index: 1000;
+}
+
+.titlebar > button:hover {
+  background: #5a5a5a70;
+}
+
+.titlebar > .x:hover {
+  background: #ff0000;
+}
+
+.titlebar > .title {
+  position: fixed;
+  left: 10px;
+  top: 0;
+
+  max-height: 30px;
+  height: 5vh;
+  min-height: 20px;
+
+  margin: 0 0;
+
+  width: 100vw;
+}
+
+.titlediv {
+  position: relative;
+  top: 0;
+
+  background: #1a1a1a;
+
+  max-height: 30px;
+  height: 5vh;
+  min-height: 20px;
+
+  width: 100%;
+}
+
+.titlediv > .title {
+  position: absolute;
+  left: 10px;
+  top: 0;
+
+  background: #1a1a1a;
+
+  max-height: 30px;
+  height: 5vh;
+  min-height: 20px;
+
+  margin: 0 0;
+
+  width: 100%;
+}
+
+/* SCROLL */
+
+html::-webkit-scrollbar {
+  width: 2px;
+  background: #ffffff;
+  /* display: none; */
+}
+html::-webkit-scrollbar-corner {
+  /* background: rgba(0, 0, 0, 0); */
+  display: none;
+}
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(31, 147, 255), rgb(0, 119, 255));
+  /* border-radius: 6px; */
+  /* border: 4px solid rgba(0, 0, 0, 0); */
+  /* background-clip: content-box; */
+  /* min-width: 32px; */
+  /* min-height: 32px; */
+  width: 2px;
+  /* display: none; */
+}
+html::-webkit-scrollbar-track {
+  /* background-color: rgba(0, 0, 0, 0); */
+  display: none;
 }

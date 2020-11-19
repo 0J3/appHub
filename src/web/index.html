@@ -2,11 +2,168 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>appHub</title>
+    <link rel="stylesheet" href="elements.css" />
+    <script src="./preload.mjs" type="module"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="titlebar">
+      <button class="x" onclick="window.close();">X</button>
+      <p class="title valign-wrapper">AppHub</p>
+    </div>
+    <!-- BACKGROUND -->
+    <img src="neverssl" alt="" class="bg" />
+
+    <!-- NAVBAR -->
+    <ul id="slide-out" class="sidenav">
+      <div class="titlediv">
+        <span class="title valign-wrapper">Navbar</span>
+      </div>
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+
+    <div class="titlediv" style="opacity: 0"></div>
+
+    <!-- HOVER BUTTON THING -->
+    <div class="fixed-action-btn">
+      <a
+        class="btn-floating btn-large red sidenav-trigger show-on-large"
+        data-target="slide-out"
+      >
+        <i class="large material-icons">menu</i>
+      </a>
+      <!-- <ul>
+        <li>
+          <a class="btn-floating blue"
+            ><i class="material-icons">attach_file</i></a
+          >
+        </li>
+        <li>
+          <a class="btn-floating green"
+            ><i class="material-icons">publish</i></a
+          >
+        </li>
+      </ul> -->
+    </div>
+
+    <!-- PAGE CONTENTS -->
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s3" id="default">
+              <a href="#1" class="active">Reccomended Applications</a>
+            </li>
+            <li class="tab col s3">
+              <a href="#2">Programming</a>
+            </li>
+            <li class="tab col s3">
+              <a href="#3">Games</a>
+            </li>
+            <li class="tab col s3">
+              <a href="#4">Other</a>
+            </li>
+          </ul>
+        </div>
+        <div id="1" class="col s12">
+          <APPLIST-MAIN class="contents">
+            <APPLIST-TITLEBAR>
+              <APPLIST-TITLE>Reccomended Apps</APPLIST-TITLE>
+            </APPLIST-TITLEBAR>
+
+            <APPLIST-APP type="RECCOMENDED">
+              <APPLIST-APPTITLE></APPLIST-APPTITLE>
+            </APPLIST-APP>
+          </APPLIST-MAIN>
+        </div>
+        <div id="2" class="col s12">
+          <APPLIST-MAIN class="contents">
+            <APPLIST-TITLEBAR>
+              <APPLIST-TITLE>Programming</APPLIST-TITLE>
+            </APPLIST-TITLEBAR>
+          </APPLIST-MAIN>
+        </div>
+        <div id="3" class="col s12">
+          <APPLIST-MAIN class="contents">
+            <APPLIST-TITLEBAR>
+              <APPLIST-TITLE>Games</APPLIST-TITLE>
+            </APPLIST-TITLEBAR>
+          </APPLIST-MAIN>
+        </div>
+        <div id="4" class="col s12">
+          <APPLIST-MAIN class="contents">
+            <APPLIST-TITLEBAR>
+              <APPLIST-TITLE>Other</APPLIST-TITLE>
+            </APPLIST-TITLEBAR>
+          </APPLIST-MAIN>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Notice</h5>
+            <p class="grey-text text-lighten-4">
+              Aleri cannot be held accountable for any damage to your pc done by
+              using this app.
+              <a
+                href='JavaScript:require("electron").shell.openExternal(__dirname+"/NOTICE.txt")'
+                >Read the full notice.</a
+              >
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="#"
+                  onclick='require("electron").shell.openExternal("https:\/\/twitter.com/0J3_3")'
+                  >0J3 on Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="#"
+                  onclick='require("electron").shell.openExternal("https\:\/\/gitlab.com/0J3")'
+                  >0J3 on Gitlab</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 Aleri. All Rights Reserved.
+          <span class="grey-text text-lighten-4 right"
+            >Made with 💖 by
+            <a
+              href="#"
+              onclick='require("electron").shell.openExternal("https\:\/\/gitlab.com/0J3")'
+              >0J3</a
+            ></span
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.mjs" type="module"></script>
+    <link rel="stylesheet" href="doneloading.css" />
   </body>
 </html>
